@@ -1,0 +1,64 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+    padding: 30px 0;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    @extend %play-400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+    color: $dark-green-color;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu {
+    &__list {
+        display: flex;
+    }
+    &__list-item + &__list-item {
+        padding-left: 65px;
+    }
+    &__list-link {
+        font-size: 14px;
+        line-height: 16px;
+        color: $dark-green-color;
+        transition: all 0.5s ease;
+        @extend %roboto-400;
+    }
+}
+
+.user-nav {
+    display: flex;
+    &__link {
+        position: relative;
+    }
+    &__link + &__link {
+        padding-left: 25px;
+    }
+    &__num {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $accent-color;
+        top: -5px;
+        right: -5px;
+        font-size: 8px;
+        line-height: 15px;
+        color: $black-color;
+        text-align: center;
+    }
+}

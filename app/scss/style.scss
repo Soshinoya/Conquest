@@ -1,5 +1,4 @@
 @import "vars";
-@import "fonts";
 @import "reset";
 @import "libs";
 @import "global";
@@ -36,7 +35,6 @@
         line-height: 16px;
         color: $dark-green-color;
         transition: all 0.5s ease;
-        @extend %roboto-400;
     }
 }
 
@@ -61,4 +59,54 @@
         color: $black-color;
         text-align: center;
     }
+}
+
+.footer {
+    background-color: $dark-gray-color;
+}
+
+.footer-top {
+    padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+    &__social-info {
+        p {
+            font-size: 12px;
+            color: #D0D0CF;
+            line-height: 14px;
+        }
+        p + p {
+            padding-top: 10px;
+        }
+    }
+    &__links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__links-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 10vw;
+        max-width: 720px;
+    }
+    &__links-title {
+        @extend %roboto-700;
+        color: #fff;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    &__links-link {
+        font-size: 12px;
+        color: #D0D0CF;
+        line-height: 14px;
+    }
+}
+
+.footer-logo {
+    margin-bottom: 25px;
+    color: #fff;
 }

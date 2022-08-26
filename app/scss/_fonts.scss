@@ -1,28 +1,28 @@
 @font-face {
-    font-family: "PlayfairDisplay-Bold";
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: local("PlayfairDisplay-Bold"), url(../fonts/PlayfairDisplay-Bold.woff2) format(woff2),
-        url(../fonts/PlayfairDisplay-Bold.woff) format(woff);
+    src: local('Playfair Display'), url(../../fonts/PlayfairDisplay-Bold.woff2) format(woff2),
+        url(../../fonts/PlayfairDisplay-Bold.woff) format(woff);
 }
 
 @font-face {
-    font-family: "PlayfairDisplay-Regular";
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: local("PlayfairDisplay-Regular"), url(../fonts/PlayfairDisplay-Regular.woff2) format(woff2),
-        url(../fonts/PlayfairDisplay-Regular.woff) format(woff);
+    src: url(../../fonts/PlayfairDisplay-Regular.woff2) format(woff2),
+        url(../../fonts/PlayfairDisplay-Regular.woff) format(woff);
 }
 
 @font-face {
-    font-family: "Prata-Regular";
+    font-family: "Prata";
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: local("Prata-Regular"), url(../fonts/Prata-Regular.woff2) format(woff2),
-        url(../fonts/Prata-Regular.woff) format(woff);
+    src: local("Prata"), url(../../fonts/Prata-Regular.woff2) format(woff2),
+        url(../../fonts/Prata-Regular.woff) format(woff);
 }
 
 @font-face {
@@ -30,8 +30,8 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: local("Roboto-Bold"), url(../fonts/Roboto-Bold.woff2) format(woff2),
-        url(../fonts/Roboto-Bold.woff) format(woff);
+    src: local("Roboto-Bold"), url(../../fonts/Roboto-Bold.woff2) format(woff2),
+        url(../../fonts/Roboto-Bold.woff) format(woff);
 }
 
 @font-face {
@@ -39,8 +39,8 @@
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    src: local("Roboto-Medium"), url(../fonts/Roboto-Medium.woff2) format(woff2),
-        url(../fonts/Roboto-Medium.woff) format(woff);
+    src: local("Roboto-Medium"), url(../../fonts/Roboto-Medium.woff2) format(woff2),
+        url(../../fonts/Roboto-Medium.woff) format(woff);
 }
 
 @font-face {
@@ -48,8 +48,8 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: local("Roboto-Regular"), url(../fonts/Roboto-Regular.woff2) format(woff2),
-        url(../fonts/Roboto-Regular.woff) format(woff);
+    src: local("Roboto-Regular"), url(../../fonts/Roboto-Regular.woff2) format(woff2),
+        url(../../fonts/Roboto-Regular.woff) format(woff);
 }
 
 @font-face {
@@ -57,6 +57,6 @@
     font-weight: 100;
     font-style: normal;
     font-display: swap;
-    src: local("Roboto-Light"), url(../fonts/Roboto-Light.woff2) format(woff2),
-        url(../fonts/Roboto-Light.woff) format(woff);
+    src: local("Roboto-Light"), url(../../fonts/Roboto-Light.woff2) format(woff2),
+        url(../../fonts/Roboto-Light.woff) format(woff);
 }

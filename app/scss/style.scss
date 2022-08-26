@@ -110,3 +110,109 @@
     margin-bottom: 25px;
     color: #fff;
 }
+
+.first-screen {
+    &__content {
+        margin: 0 20px;
+        display: flex;
+    }
+    &__content-info {
+        padding: 235px 0 25px;
+        max-width: 410px;
+        margin-left: 60px;
+    }
+    &__title {
+        @extend %play-400;
+        font-size: 45px;
+        line-height: 60px;
+        color: $black-color;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 33px;
+            left: -60px;
+            width: 50px;
+            height: 1px;
+            background-color:#8B8371;
+        }
+    }
+    &__subtitle {
+        @extend %play-400;
+        display: block;
+        font-size: 30px;
+        line-height: 40px;
+        color: $black-color;
+        margin-bottom: 40px;
+    }
+    &__text {
+        @extend %roboto-300;
+        font-size: 14px;
+        max-width: 250px;
+        margin-bottom: 50px;
+    }
+    &__link {
+        background-color: $dark-gray-color;
+        padding: 25px 40px;
+        color: #fff;
+        @extend %roboto-500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    &__content-item {
+        position: relative;
+    }
+    &__content-item--bg {
+        position: absolute;
+        left: -55px;
+        top: 0;
+        z-index: -1;
+    }
+    &__price {
+        position: absolute;
+        top: 150px;
+        left: 50px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 95px;
+            width: 50px;
+            height: 1px;
+            background-color:#8B8371;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icons/ruble.svg');
+            top: 4px;
+            left: 65px;
+            width: 10px;
+            height: 13px;
+        }
+    }
+    &__img {
+        margin-left: 130px;
+    }
+    &__specification {
+        position: absolute;
+        bottom: 115px;
+        right: -70px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            right: 140px;
+            width: 50px;
+            height: 1px;
+            background-color:#8B8371;
+        }
+    }
+    &__price,
+    &__specification {
+        @extend %prata-400;
+        color: $black-color;
+    }
+}

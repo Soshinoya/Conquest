@@ -72,7 +72,7 @@
     &__social-info {
         p {
             font-size: 12px;
-            color: #D0D0CF;
+            color: #d0d0cf;
             line-height: 14px;
         }
         p + p {
@@ -101,7 +101,7 @@
     }
     &__links-link {
         font-size: 12px;
-        color: #D0D0CF;
+        color: #d0d0cf;
         line-height: 14px;
     }
 }
@@ -112,6 +112,7 @@
 }
 
 .first-screen {
+    overflow: hidden;
     &__content {
         margin: 0 20px;
         display: flex;
@@ -128,13 +129,13 @@
         color: $black-color;
         position: relative;
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 33px;
             left: -60px;
             width: 50px;
             height: 1px;
-            background-color:#8B8371;
+            background-color: #8b8371;
         }
     }
     &__subtitle {
@@ -174,23 +175,26 @@
         position: absolute;
         top: 150px;
         left: 50px;
+        display: flex;
+        align-items: baseline;
+        span {
+            display: block;
+            &:last-child {
+                background-image: url('../images/icons/ruble.svg');
+                background-repeat: no-repeat;
+                width: 10px;
+                height: 13px;
+                margin-left: 7px;
+            }
+        }
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 10px;
             left: 95px;
             width: 50px;
             height: 1px;
-            background-color:#8B8371;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            background-image: url('../images/icons/ruble.svg');
-            top: 4px;
-            left: 65px;
-            width: 10px;
-            height: 13px;
+            background-color: #8b8371;
         }
     }
     &__img {
@@ -201,18 +205,95 @@
         bottom: 115px;
         right: -70px;
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 11px;
             right: 140px;
             width: 50px;
             height: 1px;
-            background-color:#8B8371;
+            background-color: #8b8371;
         }
     }
     &__price,
     &__specification {
         @extend %prata-400;
         color: $black-color;
+    }
+}
+
+.popular {
+    padding: 80px 0 85px;
+    &-top {
+        margin-bottom: 50px;
+        position: relative;
+    }
+    &-top__link {
+        position: absolute;
+        right: 0;
+        @extend %roboto-500;
+        line-height: 19px;
+        color: $dark-gray-color;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            bottom: -10px;
+            right: 0;
+            background-color: #c4c0b6;
+        }
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+}
+
+.popular-card {
+    max-width: 370px;
+    padding: 40px 30px;
+    &__title {
+        @extend %play-700;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        color: $black-color--trans;
+    }
+    &__price {
+        position: relative;
+        margin-top: 10px;
+        @extend %prata-400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $black-color--trans;
+        display: flex;
+        align-items: baseline;
+        span {
+            display: block;
+            &:last-child {
+                background-image: url('../images/icons/ruble.svg');
+                background-repeat: no-repeat;
+                width: 10px;
+                height: 13px;
+                margin-left: 7px;
+            }
+        }
+    }
+    &__detail {
+        margin-top: 20px;
+        padding-left: 50px;
+        position: relative;
+        @extend %play-400;
+        color: $black-color;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            top: 12px;
+            left: 0;
+            background-color: #8b8371;
+        }
     }
 }

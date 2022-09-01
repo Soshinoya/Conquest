@@ -5,6 +5,12 @@
 
 .header {
     padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white-color;
+    z-index: 10;
     &__inner {
         display: flex;
         align-items: center;
@@ -44,8 +50,24 @@
 
 .user-nav {
     display: flex;
+    align-items: center;
     &__link {
         position: relative;
+        svg {
+            path {
+                fill: $black-color;
+            }
+        }
+        &:first-child {
+            padding: 5px 25px;
+            border-radius: 20px;
+            background-color: $accent-color;
+            @extend %roboto-500;
+            color: $white-color;
+            display: block;
+            max-width: max-content;
+            text-transform: uppercase;
+        }
     }
     &__link + &__link {
         padding-left: 25px;
@@ -66,7 +88,7 @@
 }
 
 .footer {
-    background-color: $dark-gray-color;
+    background-color: $dark-gray-color--nonchange;
 }
 
 .footer-top {
@@ -96,7 +118,7 @@
     }
     &__links-title {
         @extend %roboto-700;
-        color: #fff;
+        color: $white-color--nonchange;
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.07em;
@@ -112,11 +134,12 @@
 
 .footer-logo {
     margin-bottom: 25px;
-    color: #fff;
+    color: $white-color--nonchange;
 }
 
 .first-screen {
     overflow: hidden;
+    margin-top: 100px;
     &__content {
         margin: 0 20px;
         display: flex;
@@ -160,7 +183,7 @@
     &__link {
         background-color: $dark-gray-color;
         padding: 25px 40px;
-        color: #fff;
+        color: $white-color;
         @extend %roboto-500;
         font-size: 12px;
         line-height: 14px;
@@ -175,6 +198,7 @@
         left: -55px;
         top: 0;
         z-index: -1;
+        display: $display;
     }
     &__price {
         position: absolute;
@@ -185,6 +209,7 @@
         span {
             display: block;
             &:last-child {
+                display: $display;
                 background-image: url("../images/icons/ruble.svg");
                 background-repeat: no-repeat;
                 width: 10px;
@@ -278,6 +303,7 @@
         span {
             display: block;
             &:last-child {
+                display: $display;
                 background-image: url("../images/icons/ruble.svg");
                 background-repeat: no-repeat;
                 width: 10px;
@@ -306,10 +332,20 @@
 
 .banner {
     margin-bottom: 80px;
-    background-image: url("../images/bg/banner-bg.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../images/bg/banner-bg.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: $display;
+    }
     &__inner {
         padding: 50px;
         position: relative;
@@ -340,7 +376,7 @@
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.05em;
-        color: #fff;
+        color: $white-color;
         display: block;
         max-width: max-content;
         text-transform: uppercase;
@@ -376,28 +412,72 @@
     line-height: 16px;
     position: absolute;
     left: 422px;
+    bottom: -10px;
 }
 
 .banner__btn--left,
 .banner__btn--right {
-    background: transparent;
-    border: none;
-    cursor: pointer;
     position: absolute;
-    width: 5px;
-    height: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 1px;
+    border: none;
+    padding: 0;
+    border-radius: 10px;
+    background-color: $dark-gray-color;
 }
 
-.banner__btn--left {
-    background-image: url("../images/icons/arrow_left.svg");
-    background-repeat: no-repeat;
-    left: 400px;
-}
-
-.banner__btn--right {
-    background-image: url("../images/icons/arrow_right.svg");
-    background-repeat: no-repeat;
-    left: 450px;
+.banner {
+    &__btn--left {
+        left: 375px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 1px;
+            border-radius: 10px;
+            bottom: 3px;
+            left: 0;
+            background-color: $dark-gray-color;
+            transform: rotate(-45deg);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 1px;
+            border-radius: 10px;
+            bottom: -3px;
+            left: 0;
+            background-color: $dark-gray-color;
+            transform: rotate(45deg);
+        }
+    }
+    &__btn--right {
+        left: 450px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 1px;
+            border-radius: 10px;
+            bottom: 3px;
+            right: 0;
+            background-color: $dark-gray-color;
+            transform: rotate(45deg);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 1px;
+            border-radius: 10px;
+            bottom: -3px;
+            right: 0;
+            background-color: $dark-gray-color;
+            transform: rotate(-45deg);
+        }
+    }
 }
 
 .news {
@@ -565,19 +645,19 @@
         &__btn-inner {
             top: -10px;
         }
-        &__btn--left,
-        &__btn--right,
         &__counter {
             left: auto;
         }
-        &__btn--left {
-            right: 45px;
+        &__counter {
+            right: 40px;
         }
         &__btn--right {
+            left: auto;
             right: 0;
         }
-        &__counter {
-            right: 25px;
+        &__btn--left {
+            left: auto;
+            right: 70px;
         }
     }
     .banner-item {
@@ -702,7 +782,7 @@
                 left: 0px;
                 width: 20px;
                 height: 2px;
-                background-color: #fff;
+                background-color: $white-color;
                 transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s,
                     left 0.2s ease-in-out;
                 &:nth-child(1) {
@@ -720,7 +800,12 @@
     }
     .user-nav {
         opacity: 0;
+        &__link + &__link {
+            padding: 0;
+            margin-top: 20px;
+        }
         &--active {
+            flex-direction: column;
             opacity: 1;
             position: fixed;
             transition: all 4s ease;
@@ -729,8 +814,8 @@
             .user-nav__link {
                 svg {
                     path {
-                        fill: #fff;
-                        stroke: #fff;
+                        fill: $white-color;
+                        stroke: $white-color;
                     }
                 }
             }
@@ -753,7 +838,7 @@
             bottom: 0;
             left: 0;
             margin: auto;
-            background-color: #000;
+            background-color: $black-color;
             width: 100%;
             height: 0;
             padding-bottom: 100%;
@@ -762,7 +847,6 @@
             overflow: hidden;
         }
         &--active {
-            display: block;
             top: 0;
             &:before {
                 -webkit-animation: menu-animation 0.8s ease-out forwards;
@@ -788,7 +872,7 @@
         }
         &__list-link {
             font-size: 24px;
-            color: #fff;
+            color: $white-color;
             cursor: pointer;
         }
         &__list {
@@ -895,63 +979,6 @@
         }
     }
     .banner {
-        &__btn--left,
-        &__btn--right {
-            background-image: none;
-            width: 30px;
-            height: 3px;
-            border-radius: 10px;
-            background-color: $dark-gray-color;
-        }
-        &__btn--left {
-            right: 80px;
-            &::before {
-                content: "";
-                position: absolute;
-                width: 10px;
-                height: 3px;
-                border-radius: 10px;
-                bottom: 5px;
-                left: 0;
-                background-color: $dark-gray-color;
-                transform: rotate(-45deg);
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                width: 10px;
-                height: 3px;
-                border-radius: 10px;
-                bottom: -5px;
-                left: 0;
-                background-color: $dark-gray-color;
-                transform: rotate(45deg);
-            }
-        }
-        &__btn--right {
-            &::before {
-                content: "";
-                position: absolute;
-                width: 10px;
-                height: 3px;
-                border-radius: 10px;
-                bottom: 5px;
-                right: 0;
-                background-color: $dark-gray-color;
-                transform: rotate(45deg);
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                width: 10px;
-                height: 3px;
-                border-radius: 10px;
-                bottom: -5px;
-                right: 0;
-                background-color: $dark-gray-color;
-                transform: rotate(-45deg);
-            }
-        }
         &__counter {
             font-size: 28px;
             right: 40px;
@@ -962,6 +989,11 @@
         &__links-inner {
             flex-wrap: wrap;
             gap: 8vw;
+        }
+    }
+    .banner {
+        &__btn--left {
+            right: 85px;
         }
     }
 }

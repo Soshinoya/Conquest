@@ -1,8 +1,24 @@
-$black-color: #1B1A17;
-$black-color--trans: rgba(27, 26, 23, 0.82);
-$accent-color: #E6C8B4;
-$dark-gray-color: #444240;
-$dark-green-color: #555248;
+// is use white/dark theme
+:root {
+    --black-color: #1B1A17;
+    --black-color--trans: rgba(27, 26, 23, 0.82);
+    --accent-color: #E6C8B4;
+    --dark-gray-color: #444240;
+    --dark-green-color: #555248;
+    --white-color: #fff;
+    --display: block;
+}
+
+$black-color: var(--black-color);
+$black-color--trans: var(--black-color--trans);
+$accent-color: var(--accent-color);
+$dark-gray-color: var(--dark-gray-color);
+$dark-green-color: var(--dark-green-color);
+$white-color: var(--white-color);
+$display: var(--display);
+
+$dark-gray-color--nonchange: #444240;
+$white-color--nonchange: #fff;
 
 %play-700 {
     font-family: 'Playfair Display', serif;
